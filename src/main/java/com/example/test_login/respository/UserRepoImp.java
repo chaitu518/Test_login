@@ -17,12 +17,13 @@ public class UserRepoImp implements UserRepo {
     }
     @Override
     public boolean userExists(String email) {
-        return (usersRepository.findByEmail(email) != null);
+        User user = usersRepository.findByEmail(email).orElse(null);
+        return (user != null);
     }
 
     @Override
     public User getUser(String email) {
-        return usersRepository.findByEmail(email);
+        return usersRepository.findByEmail(email).get();
     }
 
     @Override

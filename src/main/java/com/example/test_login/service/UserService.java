@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
     private UserRepo userRepository;
-    public UserService(@Qualifier("usersRepoImp") UserRepo userRepository) {
+    public UserService(@Qualifier("userRepoImp") UserRepo userRepository) {
         this.userRepository = userRepository;
     }
     public String login(String email, String password) {

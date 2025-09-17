@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UsersRepoImp implements UserRepo {
     private UserRepository userRepository;
-    public void setUserRepository(UserRepository userRepository) {
+    public UsersRepoImp(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
     @Override
