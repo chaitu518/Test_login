@@ -2,14 +2,16 @@ package com.example.test_login.service;
 
 import com.example.test_login.dto.UserDTO;
 import com.example.test_login.models.User;
-import com.example.test_login.respository.UserRepository;
+import com.example.test_login.respository.UserRepo;
+import com.example.test_login.respository.altDatabases.UserRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class UserService {
-    private UserRepository userRepository;
-    public UserService(UserRepository userRepository) {
+    private UserRepo userRepository;
+    public UserService(@Qualifier("usersRepoImp") UserRepo userRepository) {
         this.userRepository = userRepository;
     }
     public String login(String email, String password) {
